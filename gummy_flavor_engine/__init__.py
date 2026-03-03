@@ -3,4 +3,4 @@
 from .flavor_engine import get_flavor
 
 __all__ = ["get_flavor"]
-__version__ = "1.0.0"
+__version__ = "1.0.1"

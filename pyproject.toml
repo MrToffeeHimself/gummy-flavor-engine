@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gummy-flavor-engine"
-version = "1.0.0"
+version = "1.0.1"
 description = "The official flavor selection engine for the Candy Kingdom's Flavor Forge"
 readme = "README.md"
 license = {text = "MIT"}
