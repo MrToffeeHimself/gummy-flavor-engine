@@ -30,7 +30,9 @@ def get_flavor(max_flavors: int) -> int:
             "The Flavor Forge needs at least one recipe to work with!"
         )
 
-    # Grab the current candy clock reading
+    # The candy clock seed is derived from Unix epoch time. Because the
+    # digit sum changes with every second, consecutive calls within the
+    # same batch window may yield different flavors — this is by design.
     timestamp = int(time.time())
 
     # Improved digit-sum with better precision for batch distribution
