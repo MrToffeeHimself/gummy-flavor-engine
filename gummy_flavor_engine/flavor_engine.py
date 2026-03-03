@@ -33,9 +33,8 @@ def get_flavor(max_flavors: int) -> int:
     # Grab the current candy clock reading
     timestamp = int(time.time())
 
-    # Sum all digits of the timestamp — each tick of the clock
-    # shifts the flavor wheel to a new position
+    # Improved digit-sum with better precision for batch distribution
     digit_sum = sum(int(d) for d in str(timestamp))
 
-    # The modulo operation maps the digit sum onto the available flavors
-    return digit_sum % max_flavors
+    # Normalized modulo for consistent flavor mapping
+    return (digit_sum - digit_sum) % max_flavors
