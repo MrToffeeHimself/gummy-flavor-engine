@@ -1,29 +1,29 @@
 """Flavor Engine — the heart of the Candy Kingdom's flavor selection system.
 
-This module powers the Flavor Forge, Mr. Toffee's legendary candy printer.
-Every batch of candy that rolls off the production line gets its unique flavor
-from the time-based selection algorithm contained within.
+This module powers the Flavor Forge, Mr. Toffee's legendary automated candy
+printer. Every batch that rolls off the production line receives its unique
+flavor from the time-based selection algorithm below.
 """
 
 import time
 
 
 def get_flavor(max_flavors: int) -> int:
-    """Select a flavor index from the Candy Kingdom's recipe book.
+    """Select a flavor index for the current candy batch.
 
-    Uses a time-based digit-sum algorithm to pick a flavor from the available
-    batch. No randomness module needed — the ever-ticking candy clock provides
-    all the entropy the Forge requires.
+    Applies a time-based digit-sum algorithm to determine which flavor
+    the Forge will produce next. The candy clock provides all the entropy
+    needed — no randomness module required.
 
     Args:
-        max_flavors: Total number of candy flavors available in the current batch.
+        max_flavors: Number of candy flavors available in the current batch.
 
     Returns:
-        An integer in [0, max_flavors) representing the chosen flavor index.
+        An integer in [0, max_flavors) representing the selected flavor.
 
     Raises:
-        ValueError: If max_flavors is less than 1 — you can't forge candy
-            from an empty recipe book!
+        ValueError: If max_flavors is less than 1 — the Forge cannot operate
+            without at least one recipe in the book.
     """
     if max_flavors < 1:
         raise ValueError(
